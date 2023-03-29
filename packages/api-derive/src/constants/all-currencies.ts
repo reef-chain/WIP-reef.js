@@ -19,9 +19,9 @@ function getNativeCurrencyId(api: ApiInterfaceRx): Observable<CurrencyId> {
  * @name nativeCurrencyId
  * @returns native currencyId
  */
-export function nativeCurrencyId(instanceId: string, api: ApiInterfaceRx): () => Observable<CurrencyId> {
+export function nativeCurrencyId(instanceId: string, api: unknown): () => Observable<CurrencyId> {
   return memo(instanceId, () => {
-    return getNativeCurrencyId(api);
+    return getNativeCurrencyId(api as ApiInterfaceRx);
   });
 }
 
@@ -38,9 +38,9 @@ function getAllNonNativeCurrencyIds(api: ApiInterfaceRx): Vec<CurrencyId> {
  * @name allNonNativeCurrencyIds
  * @returns all nonnative currencyIds
  */
-export function allNonNativeCurrencyIds(instanceId: string, api: ApiInterfaceRx): () => Observable<Vec<CurrencyId>> {
+export function allNonNativeCurrencyIds(instanceId: string, api: unknown): () => Observable<Vec<CurrencyId>> {
   return memo(instanceId, () => {
-    return of(getAllNonNativeCurrencyIds(api));
+    return of(getAllNonNativeCurrencyIds(api as ApiInterfaceRx));
   });
 }
 
@@ -48,11 +48,11 @@ export function allNonNativeCurrencyIds(instanceId: string, api: ApiInterfaceRx)
  * @name allCurrencyIds
  * @returns all currencyIds includes stable curerncyId and all nonnative currencyIds
  */
-export function allCurrencyIds(instanceId: string, api: ApiInterfaceRx): () => Observable<CurrencyId[]> {
+export function allCurrencyIds(instanceId: string, api: unknown): () => Observable<CurrencyId[]> {
   return memo(instanceId, () => {
-    return getNativeCurrencyId(api).pipe(
+    return getNativeCurrencyId(api as ApiInterfaceRx).pipe(
       switchMap((nativeCurrencyId) => {
-        return of([nativeCurrencyId, ...getAllNonNativeCurrencyIds(api).slice()]);
+        return of([nativeCurrencyId, ...getAllNonNativeCurrencyIds(api as ApiInterfaceRx).slice()]);
       })
     );
   });
