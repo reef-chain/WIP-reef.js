@@ -1,12 +1,18 @@
 // Auto-generated via `yarn polkadot-types-from-chain`, do not edit
 /* eslint-disable */
 
-import type { ApiTypes } from '@polkadot/api/types';
-import type { u32 } from '@polkadot/types';
-import type { Codec } from '@polkadot/types/types';
+// import type lookup before we augment - in some environments
+// this is required to allow for ambient/previous definitions
+import '@polkadot/api-base/types/consts';
 
-declare module '@polkadot/api/types/consts' {
-  export interface AugmentedConsts<ApiType> {
+import type { ApiTypes, AugmentedConst } from '@polkadot/api-base/types';
+import type { u32 } from '@polkadot/types-codec';
+import type { Codec } from '@polkadot/types-codec/types';
+
+export type __AugmentedConst<ApiType extends ApiTypes> = AugmentedConst<ApiType>;
+
+declare module '@polkadot/api-base/types/consts' {
+  interface AugmentedConsts<ApiType extends ApiTypes> {
     tokens: {
       maxLocks: u32 & AugmentedConst<ApiType>;
       /**
@@ -14,9 +20,5 @@ declare module '@polkadot/api/types/consts' {
        **/
       [key: string]: Codec;
     };
-  }
-
-  export interface QueryableConsts<ApiType extends ApiTypes> extends AugmentedConsts<ApiType> {
-    [key: string]: QueryableModuleConsts;
-  }
-}
+  } // AugmentedConsts
+} // declare module

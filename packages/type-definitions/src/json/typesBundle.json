@@ -48,6 +48,28 @@
                         "section": "oracle"
                     }
                 },
+                "tokens": {
+                    "queryExistentialDeposit": {
+                        "description": "Query Existential Deposit for a given currency.",
+                        "params": [
+                            {
+                                "name": "currencyId",
+                                "type": "CurrencyId"
+                            },
+                            {
+                                "name": "at",
+                                "type": "BlockHash",
+                                "isHistoric": true,
+                                "isOptional": true
+                            }
+                        ],
+                        "type": "NumberOrHex",
+                        "isSubscription": false,
+                        "jsonrpc": "tokens_queryExistentialDeposit",
+                        "method": "queryExistentialDeposit",
+                        "section": "tokens"
+                    }
+                },
                 "evm": {
                     "call": {
                         "description": "eth call",
@@ -153,8 +175,8 @@
                         "OrderedSet": "Vec<AccountId>",
                         "OrmlAccountData": {
                             "free": "Balance",
-                            "frozen": "Balance",
-                            "reserved": "Balance"
+                            "reserved": "Balance",
+                            "frozen": "Balance"
                         },
                         "OrmlBalanceLock": {
                             "amount": "Balance",
@@ -192,7 +214,7 @@
                             "totalWithdrawnRewards": "CompactBalance"
                         },
                         "Share": "u128",
-                        "OracleValue": "Price",
+                        "OracleValue": "Amount",
                         "PalletBalanceOf": "Balance",
                         "EstimateResourcesResponse": {
                             "gas": "u256",
@@ -384,8 +406,8 @@
                         "OrderedSet": "Vec<AccountId>",
                         "OrmlAccountData": {
                             "free": "Balance",
-                            "frozen": "Balance",
-                            "reserved": "Balance"
+                            "reserved": "Balance",
+                            "frozen": "Balance"
                         },
                         "OrmlBalanceLock": {
                             "amount": "Balance",
@@ -423,7 +445,7 @@
                             "totalWithdrawnRewards": "CompactBalance"
                         },
                         "Share": "u128",
-                        "OracleValue": "Price",
+                        "OracleValue": "Amount",
                         "PalletBalanceOf": "Balance",
                         "EstimateResourcesResponse": {
                             "gas": "u256",
@@ -615,8 +637,8 @@
                         "OrderedSet": "Vec<AccountId>",
                         "OrmlAccountData": {
                             "free": "Balance",
-                            "frozen": "Balance",
-                            "reserved": "Balance"
+                            "reserved": "Balance",
+                            "frozen": "Balance"
                         },
                         "OrmlBalanceLock": {
                             "amount": "Balance",
@@ -654,7 +676,7 @@
                             "totalWithdrawnRewards": "CompactBalance"
                         },
                         "Share": "u128",
-                        "OracleValue": "Price",
+                        "OracleValue": "Amount",
                         "PalletBalanceOf": "Balance",
                         "EstimateResourcesResponse": {
                             "gas": "u256",
@@ -865,6 +887,28 @@
                         "section": "oracle"
                     }
                 },
+                "tokens": {
+                    "queryExistentialDeposit": {
+                        "description": "Query Existential Deposit for a given currency.",
+                        "params": [
+                            {
+                                "name": "currencyId",
+                                "type": "CurrencyId"
+                            },
+                            {
+                                "name": "at",
+                                "type": "BlockHash",
+                                "isHistoric": true,
+                                "isOptional": true
+                            }
+                        ],
+                        "type": "NumberOrHex",
+                        "isSubscription": false,
+                        "jsonrpc": "tokens_queryExistentialDeposit",
+                        "method": "queryExistentialDeposit",
+                        "section": "tokens"
+                    }
+                },
                 "evm": {
                     "call": {
                         "description": "eth call",
@@ -970,8 +1014,8 @@
                         "OrderedSet": "Vec<AccountId>",
                         "OrmlAccountData": {
                             "free": "Balance",
-                            "frozen": "Balance",
-                            "reserved": "Balance"
+                            "reserved": "Balance",
+                            "frozen": "Balance"
                         },
                         "OrmlBalanceLock": {
                             "amount": "Balance",
@@ -1009,7 +1053,7 @@
                             "totalWithdrawnRewards": "CompactBalance"
                         },
                         "Share": "u128",
-                        "OracleValue": "Price",
+                        "OracleValue": "Amount",
                         "PalletBalanceOf": "Balance",
                         "EstimateResourcesResponse": {
                             "gas": "u256",
@@ -1201,8 +1245,8 @@
                         "OrderedSet": "Vec<AccountId>",
                         "OrmlAccountData": {
                             "free": "Balance",
-                            "frozen": "Balance",
-                            "reserved": "Balance"
+                            "reserved": "Balance",
+                            "frozen": "Balance"
                         },
                         "OrmlBalanceLock": {
                             "amount": "Balance",
@@ -1240,7 +1284,7 @@
                             "totalWithdrawnRewards": "CompactBalance"
                         },
                         "Share": "u128",
-                        "OracleValue": "Price",
+                        "OracleValue": "Amount",
                         "PalletBalanceOf": "Balance",
                         "EstimateResourcesResponse": {
                             "gas": "u256",
@@ -1432,8 +1476,8 @@
                         "OrderedSet": "Vec<AccountId>",
                         "OrmlAccountData": {
                             "free": "Balance",
-                            "frozen": "Balance",
-                            "reserved": "Balance"
+                            "reserved": "Balance",
+                            "frozen": "Balance"
                         },
                         "OrmlBalanceLock": {
                             "amount": "Balance",
@@ -1471,7 +1515,7 @@
                             "totalWithdrawnRewards": "CompactBalance"
                         },
                         "Share": "u128",
-                        "OracleValue": "Price",
+                        "OracleValue": "Amount",
                         "PalletBalanceOf": "Balance",
                         "EstimateResourcesResponse": {
                             "gas": "u256",

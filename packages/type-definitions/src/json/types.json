@@ -30,8 +30,8 @@
     "OrderedSet": "Vec<AccountId>",
     "OrmlAccountData": {
         "free": "Balance",
-        "frozen": "Balance",
-        "reserved": "Balance"
+        "reserved": "Balance",
+        "frozen": "Balance"
     },
     "OrmlBalanceLock": {
         "amount": "Balance",
@@ -69,7 +69,7 @@
         "totalWithdrawnRewards": "CompactBalance"
     },
     "Share": "u128",
-    "OracleValue": "Price",
+    "OracleValue": "Amount",
     "PalletBalanceOf": "Balance",
     "EstimateResourcesResponse": {
         "gas": "u256",

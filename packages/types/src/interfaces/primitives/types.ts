@@ -1,8 +1,8 @@
 // Auto-generated via `yarn polkadot-types-from-defs`, do not edit
 /* eslint-disable */
 
-import type { Enum, i128, u128, u32 } from '@polkadot/types';
-import type { ITuple } from '@polkadot/types/types';
+import type { Enum, i128, u128, u32 } from '@polkadot/types-codec';
+import type { ITuple } from '@polkadot/types-codec/types';
 import type { EvmAddress } from '@reef-defi/types/interfaces/evm';
 
 /** @name Amount */
@@ -20,6 +20,7 @@ export interface AuctionIdOf extends AuctionId {}
 /** @name AuthoritysOriginId */
 export interface AuthoritysOriginId extends Enum {
   readonly isRoot: boolean;
+  readonly type: 'Root';
 }
 
 /** @name CurrencyId */
@@ -30,6 +31,7 @@ export interface CurrencyId extends Enum {
   readonly asDexShare: ITuple<[TokenSymbol, TokenSymbol]>;
   readonly isErc20: boolean;
   readonly asErc20: EvmAddress;
+  readonly type: 'Token' | 'DexShare' | 'Erc20';
 }
 
 /** @name CurrencyIdOf */
@@ -42,6 +44,7 @@ export interface Share extends u128 {}
 export interface TokenSymbol extends Enum {
   readonly isReef: boolean;
   readonly isRusd: boolean;
+  readonly type: 'Reef' | 'Rusd';
 }
 
 /** @name TradingPair */

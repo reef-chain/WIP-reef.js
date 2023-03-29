@@ -2,7 +2,8 @@ export default {
   rpc: {},
   types: {
     OracleKey: 'CurrencyId',
-    OracleValue: 'Price',
+    //! updated price to amount
+    OracleValue: 'Amount',
     AsOriginId: 'AuthoritysOriginId'
   }
 };

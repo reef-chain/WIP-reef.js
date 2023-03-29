@@ -15,16 +15,16 @@
   },
   "homepage": "https://github.com/reef-defi/reef.js",
   "dependencies": {
-    "@polkadot/api": "~6.4.2",
-    "@polkadot/types": "~6.4.2",
+    "@polkadot/api": "~10.2.1",
+    "@polkadot/types": "~10.2.1",
     "@reef-defi/api": "^1.1.0",
     "@reef-defi/type-definitions": "^1.1.0",
     "@types/events": "^3.0.0",
-    "bignumber.js": "^9.0.0",
-    "events": "^3.2.0",
-    "lodash": "^4.17.20"
+    "bignumber.js": "^9.1.1",
+    "events": "^3.3.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.161"
+    "@types/lodash": "^4.14.191"
   }
 }

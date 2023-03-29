@@ -15,9 +15,9 @@
   },
   "homepage": "https://github.com/reef-defi/reef.js",
   "dependencies": {
-    "@babel/runtime": "^7.10.2",
-    "@open-web3/orml-types": "^1.0.1",
-    "@polkadot/api-derive": "~6.4.2",
+    "@babel/runtime": "^7.21.0",
+    "@open-web3/orml-types": "^2.0.1",
+    "@polkadot/api-base": "~10.2.1",
     "@reef-defi/types": "^1.1.0"
   }
 }

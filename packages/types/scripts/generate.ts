@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access */
 import { Metadata } from '@polkadot/types';
+import type { HexString } from '@polkadot/util/types';
 import { TypeRegistry } from '@polkadot/types/create';
 import { generateInterfaceTypes } from '@polkadot/typegen/generate/interfaceRegistry';
 import { generateTsDef } from '@polkadot/typegen/generate/tsDef';
@@ -21,7 +22,7 @@ import * as acalaDefinations from '../src/interfaces/definitions';
 
 // Only keep our own modules to avoid confllicts with the one provided by polkadot.js
 // TODO: make an issue on polkadot.js
-function filterModules(names: string[], defs: any): string {
+function filterModules(names: string[], defs: any): HexString {
   const registry = new TypeRegistry();
   registerDefinitions(registry, defs);
   const metadata = new Metadata(registry, metaHex);
@@ -40,11 +41,11 @@ function filterModules(names: string[], defs: any): string {
 const { runtime, ...substrateDefinations } = defaultDefinations;
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const { runtime: _runtime, ...ormlModulesDefinations } = ormlDefinations;
+const { runtime: _runtime } = ormlDefinations;
 
 const definations = {
   '@polkadot/types/interfaces': substrateDefinations,
-  '@open-web3/orml-types/interfaces': ormlModulesDefinations,
+  //'@open-web3/orml-types/interfaces': ormlModulesDefinations,
   '@reef-defi/types/interfaces': acalaDefinations
 } as any;
 

@@ -11,7 +11,7 @@
   },
   "repository": "https://github.com/reef-defi/reef.js.git",
   "dependencies": {
-    "@babel/runtime": "^7.10.2",
-    "bignumber.js": "^9.0.0"
+    "@babel/runtime": "^7.21.0",
+    "bignumber.js": "^9.1.1"
   }
 }

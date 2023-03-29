@@ -1,15 +1,22 @@
 // Auto-generated via `yarn polkadot-types-from-chain`, do not edit
 /* eslint-disable */
 
-import type { ApiTypes, SubmittableExtrinsic } from '@polkadot/api/types';
-import type { Compact } from '@polkadot/types';
-import type { Extrinsic } from '@polkadot/types/interfaces/extrinsics';
-import type { AnyNumber } from '@polkadot/types/types';
-import type { AmountOf, CurrencyIdOf } from '@reef-defi/types/interfaces/primitives';
-import type { BalanceOf, Call, LookupSource } from '@reef-defi/types/interfaces/runtime';
+// import type lookup before we augment - in some environments
+// this is required to allow for ambient/previous definitions
+import '@polkadot/api-base/types/submittable';
 
-declare module '@polkadot/api/types/submittable' {
-  export interface AugmentedSubmittables<ApiType> {
+import type { ApiTypes, AugmentedSubmittable, SubmittableExtrinsic, SubmittableExtrinsicFunction } from '@polkadot/api-base/types';
+import type { Compact } from '@polkadot/types-codec';
+import type { AnyNumber } from '@polkadot/types-codec/types';
+import type { AmountOf, CurrencyIdOf } from '@reef-defi/types/interfaces/primitives';
+import type { BalanceOf, LookupSource } from '@reef-defi/types/interfaces/runtime';
+
+export type __AugmentedSubmittable = AugmentedSubmittable<() => unknown>;
+export type __SubmittableExtrinsic<ApiType extends ApiTypes> = SubmittableExtrinsic<ApiType>;
+export type __SubmittableExtrinsicFunction<ApiType extends ApiTypes> = SubmittableExtrinsicFunction<ApiType>;
+
+declare module '@polkadot/api-base/types/submittable' {
+  interface AugmentedSubmittables<ApiType extends ApiTypes> {
     currencies: {
       /**
        * Transfer some balance to another account under `currency_id`.
@@ -36,10 +43,5 @@ declare module '@polkadot/api/types/submittable' {
        **/
       [key: string]: SubmittableExtrinsicFunction<ApiType>;
     };
-  }
-
-  export interface SubmittableExtrinsics<ApiType extends ApiTypes> extends AugmentedSubmittables<ApiType> {
-    (extrinsic: Call | Extrinsic | Uint8Array | string): SubmittableExtrinsic<ApiType>;
-    [key: string]: SubmittableModuleExtrinsics<ApiType>;
-  }
-}
+  } // AugmentedSubmittables
+} // declare module

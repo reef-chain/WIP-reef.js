@@ -1,7 +1,7 @@
 // Auto-generated via `yarn polkadot-types-from-defs`, do not edit
 /* eslint-disable */
 
-import type { Bytes, Option, Struct, U128, bool, i32, u256, u32 } from '@polkadot/types';
+import type { Bytes, Option, Struct, U128, bool, i32, u256, u32 } from '@polkadot/types-codec';
 import type { Balance, H160, H256, Index } from '@reef-defi/types/interfaces/runtime';
 
 /** @name CallRequest */

@@ -1,4 +1,4 @@
-import { DeriveCustom } from '@polkadot/api-derive';
+import { DeriveCustom } from '@polkadot/api-base/types';
 
 import * as constants from './constants';
 

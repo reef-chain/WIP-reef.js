@@ -15,15 +15,15 @@
   },
   "homepage": "https://github.com/reef-defi/reef.js",
   "dependencies": {
-    "@babel/runtime": "^7.10.2",
-    "@open-web3/api-mobx": "^1.0.1",
-    "@open-web3/orml-types": "^1.0.1",
-    "@polkadot/api": "~6.4.2",
-    "@polkadot/typegen": "~6.4.2",
-    "@polkadot/types": "~6.4.2"
+    "@babel/runtime": "^7.21.0",
+    "@open-web3/api-mobx": "^1.1.4",
+    "@open-web3/orml-types": "^2.0.1",
+    "@polkadot/api": "~10.2.1",
+    "@polkadot/typegen": "~10.2.1",
+    "@polkadot/types": "~10.2.1"
   },
   "devDependencies": {
-    "@types/websocket": "^1.0.0",
-    "websocket": "^1.0.31"
+    "@types/websocket": "^1.0.5",
+    "websocket": "^1.0.34"
   }
 }

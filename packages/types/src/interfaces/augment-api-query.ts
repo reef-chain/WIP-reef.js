@@ -1,15 +1,22 @@
 // Auto-generated via `yarn polkadot-types-from-chain`, do not edit
 /* eslint-disable */
 
-import type { ApiTypes } from '@polkadot/api/types';
-import type { Vec } from '@polkadot/types';
+// import type lookup before we augment - in some environments
+// this is required to allow for ambient/previous definitions
+import '@polkadot/api-base/types/storage';
+
+import type { ApiTypes, AugmentedQuery, QueryableStorageEntry } from '@polkadot/api-base/types';
+import type { Vec } from '@polkadot/types-codec';
 import type { AccountData, BalanceLock } from '@polkadot/types/interfaces/balances';
 import type { Observable } from '@polkadot/types/types';
 import type { CurrencyId } from '@reef-defi/types/interfaces/primitives';
 import type { AccountId, Balance } from '@reef-defi/types/interfaces/runtime';
 
-declare module '@polkadot/api/types/storage' {
-  export interface AugmentedQueries<ApiType> {
+export type __AugmentedQuery<ApiType extends ApiTypes> = AugmentedQuery<ApiType, () => unknown>;
+export type __QueryableStorageEntry<ApiType extends ApiTypes> = QueryableStorageEntry<ApiType>;
+
+declare module '@polkadot/api-base/types/storage' {
+  interface AugmentedQueries<ApiType extends ApiTypes> {
     tokens: {
       /**
        * The balance of a token type under an account.
@@ -34,9 +41,5 @@ declare module '@polkadot/api/types/storage' {
        **/
       [key: string]: QueryableStorageEntry<ApiType>;
     };
-  }
-
-  export interface QueryableStorage<ApiType extends ApiTypes> extends AugmentedQueries<ApiType> {
-    [key: string]: QueryableModuleStorage<ApiType>;
-  }
-}
+  } // AugmentedQueries
+} // declare module
